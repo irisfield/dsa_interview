@@ -80,6 +80,7 @@ libraries can significantly simplify your coding process and enhance your
 efficiency.
 
 ##### 6. Solve Simple Problems
+
 Just reading about a topic or watching tutorials is not enough. Practice solving
 simple problems related to the topic to build confidence and reinforce your
 learning. 
@@ -87,3 +88,7 @@ learning.
 For instance, try solving 4-5 easy problems on LeetCode that pertain to the
 topic you are currently studying. This hands-on practice will help solidify your
 understanding.
+
+# Topic Order
+I am using this graph from [AlgoMaster](https://blog.algomaster.io/p/how-i-mastered-data-structures-and-algorithms).
+![Learning Order](images/dsa_learning_order.png)
