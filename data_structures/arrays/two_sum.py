@@ -1,5 +1,5 @@
 class Solution:
-    """199. Binary Tree Right Side View"""
+    """1. Two Sum"""
     def twoSum(self, nums: list[int], target: int) -> list[int]:
         hashmap = {}
         for i, n in enumerate(nums):  # time O(n)
