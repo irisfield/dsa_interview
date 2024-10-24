@@ -29,10 +29,18 @@ the same algorithms, but the problem uses a different wording.
 
 ##### 5. LeetCode Practice
 
-Solve two LeetCode problems every day to reinforce your knowledge and improve
-your interviewing skills. But if a problem is too hard and you cannot solve
-within 20 minutes (10 for understanding and 10 for writing), move on, and study
-the solution instead.
+Solve two LeetCode problems every day to reinforce your knowledge. If you get
+stuck, consider moving on and understanding the solution instead.
+
+In general, spend no more than:
+
+- 10 minutes on Easy
+- 15 minutes on Medium
+- 20 minutes on Hard
+
+
+If you cannot figure it out within that time frame, look up a video explaining
+the solution.
 
 # How To Start Learning a New Topic?
 
