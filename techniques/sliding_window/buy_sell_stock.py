@@ -16,5 +16,5 @@ class Solution:
         """
         return maxProfit
 
-assert Solution().maxProfit([7,6,4,3,1]) == 0, f"Max profit should be 0"
-assert Solution().maxProfit([7,1,5,3,6,4]) == 5, f"Max profit should be 5"
+assert Solution().maxProfit([7,6,4,3,1]) == 0, "Expected 0"
+assert Solution().maxProfit([7,1,5,3,6,4]) == 5, "Expected 5"
