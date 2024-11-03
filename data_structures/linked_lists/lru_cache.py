@@ -7,7 +7,8 @@ class Node:
 
 class LRUCache:
     """146. LRU Cache"""
-    def __init__(self, size: int):  # space O(n)
+
+    def __init__(self, size: int):  # space O(size)
         self.map = {}
         self.size = size
         self.head = Node(-1, -1)
@@ -23,7 +24,7 @@ class LRUCache:
         self.insertAfterHead(node)
         return node.val
 
-    def put(self, key: int, val: int) -> bool:  # time O(1)
+    def put(self, key: int, val: int) -> None:  # time O(1)
         if key in self.map:
             node = self.map[key]
             node.val = val
@@ -38,7 +39,7 @@ class LRUCache:
             self.map[key] = node
             self.insertAfterHead(node)
 
-    def removeNode(self, node: Node) -> None:  # time O(1)
+    def removeNode(self, node: "Node") -> None:  # time O(1)
         node.prev.next = node.next
         node.next.prev = node.prev
         node.prev = None
@@ -54,6 +55,22 @@ class LRUCache:
         res = ""
         cur = self.head
         while cur:
-            res += f"{cur.val}" if cur is self.head else f" {cur.val}"
+            res += f"{cur.val} "
             cur = cur.next
-        return f"{res}  {self.map}"
+
+        cache = "{\n"
+        for k, v in self.map.items():
+            cache += f"  {k} : Node({v.val})\n"
+        cache += "}"
+
+        return f"{res}\n{cache}"
+
+l = LRUCache(2)
+l.put(1, 1)
+l.put(2, 2)
+print(l.get(1))
+# l.put(3, 3)
+# l.put(3, 3)
+# l.put(4, 3)
+
+print(l)
