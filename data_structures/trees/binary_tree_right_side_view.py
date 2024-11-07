@@ -4,16 +4,18 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+from collections import deque
+
 class Solution:
     """199. Binary Tree Right Side View"""
     def rightSideView(self, root: Optional[TreeNode]) -> list[int]:
         # Breadth-First Search / Level Ordered Traversal
         res = []
-        q = collections.deque([root])
+        q = deque([root])
 
         while q:
             length = len(q)
-
             for i in range(length):
                 node = q.popleft()
                 if i == (length - 1):
