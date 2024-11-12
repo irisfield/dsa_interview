@@ -1,0 +1,24 @@
+class Solution:
+    """1071. Greatest Common Divisor of Strings"""
+
+    def gcdOfStrings(self, str1: str, str2: str) -> str:
+        len1, len2 = len(str1), len(str2)
+
+        def isDivisor(l):
+            if len1 % l or len2 % l:
+                return False
+            f1, f2 = len1 // l, len2 // l
+            return (str1[:l] * f1 == str1 and str1[:l] * f2 == str2)
+
+
+        for l in range(min(len1, len2), 0, -1):
+            if isDivisor(l):
+                return str1[:l]
+        """
+        The time complexity is O(min(m, n) * (m + n)) because the
+        algorithm iterates through the shortest string the for
+        the length of the strings combined.
+
+        The space complexity is O(1) as no extra space is utilized.
+        """
+        return ""
