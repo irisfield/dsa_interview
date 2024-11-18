@@ -5,6 +5,29 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
+        if not nums2:
+            return
+
+        length = m + n - 1
+        m, n = m - 1, n - 1
+
+        for i in range(length, -1, -1):
+            if m >= 0 and nums1[m] > nums2[n]:
+                nums1[i] = nums1[m]
+                m -= 1
+            elif n >= 0:
+                nums1[i] = nums2[n]
+                n -= 1
+        """
+        The time complexity is O(m + n) as each element is processed once.
+        The space complexity is O(1) as no additional memory is used.
+        """
+
+
+    def merge(self, nums1: list[int], m: int, nums2: list[int], n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
         l = m + n - 1
         m -= 1
         n -= 1
@@ -26,7 +49,7 @@ class Solution:
             l -= 1
 
         """
-        The time complexity is O(n + n) as each element is processed once.
+        The time complexity is O(m + n) as each element is processed once.
         The space complexity is O(1) as no additional memory is used.
         """
 
@@ -53,6 +76,6 @@ class Solution:
             n, last = n - 1, last - 1
 
         """
-        The time complexity is O(n + n) as each element is processed once.
+        The time complexity is O(m + n) as each element is processed once.
         The space complexity is O(1) as no additional memory is used.
         """
