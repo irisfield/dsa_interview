@@ -2,6 +2,31 @@ class Solution:
     """1071. Greatest Common Divisor of Strings"""
 
     def gcdOfStrings(self, str1: str, str2: str) -> str:
+        if len(str2) > len(str1):
+            str1, str2 = str2, str1
+
+        res = ""
+        for i in range(len(str2)):  # O(m) time
+            sub = str2[:i + 1]
+            p1 = len(str1) // len(sub)
+            p2 = len(str2) // len(sub)
+
+            # O(n + m) time
+            if (sub * p1) == str1 and (sub * p2) == str2:
+                if len(sub) > len(res):
+                    res = sub
+
+        """
+        Let n = len(str1) and m = len(str2).
+
+        The time complexity is O(m * (n + m)) because each comparison of
+        sub * p1 and sub * p2 takes n + m time and this is done m times.
+
+        The space complexity is O(m), as sub can be same length as str2.
+        """
+        return res
+
+    def gcdOfStrings(self, str1: str, str2: str) -> str:
         len1, len2 = len(str1), len(str2)
 
         def isDivisor(l):
