@@ -6,6 +6,58 @@ class Solution:
         Do not return anything, modify board in-place instead.
 
         Intuition:
+        1. Find the region of each border cell that contains an "O".
+        2. Mark those regions in the board with a different letter.
+        3. Iterate over the board and capture the remaining "O" cells
+           that were not marked, and restore the marked cells to an "O".
+        """
+        ROWS, COLS = len(board), len(board[0])
+        directions = [(1, 0), (0, 1), (-1, 0), (0, -1)]
+
+        def dfs(r, c):
+            if (r < 0 or r == ROWS or c < 0 or c == COLS or
+                board[r][c] != "O"):
+                return
+
+            # Mark the region of border cell as visited
+            board[r][c] = "V"
+
+            for dr, dc in directions:
+                dfs(r + dr, c + dc)
+
+        # Mark the region of the border cells
+        for c in range(COLS):
+            if board[0][c] == "O":
+                dfs(0, c)
+            if board[-1][c] == "O":
+                dfs(ROWS - 1, c)
+        for r in range(1, ROWS - 1):
+            if board[r][0] == "O":
+                dfs(r, 0)
+            if board[r][-1] == "O":
+                dfs(r, COLS - 1)
+
+        for r in range(ROWS):
+            for c in range(COLS):
+                if board[r][c] == "O":
+                    board[r][c] = "X"
+                elif board[r][c] == "V":
+                    board[r][c] = "O"
+
+        """
+        The time complexity is O(m * n), where m * n is the size of the
+        board. Each cell is visited at most twice.
+
+        The space complexity is O(1), excluding the recursion stack, due
+        to board being modified in place to mark visited cells.
+        """
+
+
+    def solve(self, board: List[List[str]]) -> None:
+        """
+        Do not return anything, modify board in-place instead.
+
+        Intuition:
         1. Find all connected non-border cells that contains an "O".
         2. Store the positions of those cells to a list of regions.
         3. Capture each region that is fully surrounded by "X" cells.
