@@ -7,7 +7,7 @@ class Solution:
         """
         ROWS, COLS = len(matrix), len(matrix[0])
 
-        r, c = 0, ROWS - 1
+        r, c = 0, COLS - 1
 
         while r < ROWS and c >= 0:
 
