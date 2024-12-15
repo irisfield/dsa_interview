@@ -1,5 +1,6 @@
 class Solution:
     """42. Trapping Rain Water"""
+
     def trap(self, height: list[int]) -> int:
 
         l, r = 0, len(height) - 1
@@ -15,9 +16,15 @@ class Solution:
                 r -= 1
                 maxRight = max(maxRight, height[r])
                 water += maxRight - height[r]
+        """
+        The time complexity is O(n), as the heights are processed once
+        with two pointers.
+
+        The space complexity is O(1), as no data structures are used.
+        """
         return water
 
-    def trap2(self, height: list[int]) -> int:
+    def trap(self, height: list[int]) -> int:
         import collections
         maxLeft = []
         maxRight = collections.deque()
@@ -39,7 +46,12 @@ class Solution:
         for i in range(len(height)):  # time O(n)
             diff = min(maxLeft[i], maxRight[i]) - height[i]
             water += diff if diff > 0 else 0
+        """
+        The time complexity is O(n), as the heights are processed
+        a constant number of times. Once for maxLeft, once for maxRight,
+        and once for the water calculation.
 
+        The space complexity is O(n), as maxLeft and maxRight store
+        extra data.
+        """
         return water
-
-print(Solution().trap([0,1,0,2,1,0,1,3,2,1,2,1]))
