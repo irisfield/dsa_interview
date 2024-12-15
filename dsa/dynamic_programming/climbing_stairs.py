@@ -9,12 +9,11 @@ class Solution:
             temp = one
             one = one + two
             two = temp
-        return one
         """
         The time complexity is O(n) as each element is processed exactly once.
         The space complexity is O(1) as no data structures were utilized.
         """
-        return backtrack(0, {})
+        return one
 
     def climbStairs(self, n: int) -> int:
         # Decisions: take 1 step, take 2 steps
