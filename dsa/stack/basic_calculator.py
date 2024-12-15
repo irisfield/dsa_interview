@@ -1,5 +1,6 @@
 class Solution:
     """224. Basic Calculator"""
+
     def calculate(self, s: str) -> int:
         res, sign, stack = 0, 1, []
 
@@ -20,8 +21,12 @@ class Solution:
                 cur = 0
                 res *= stack.pop()  # sign
                 res += stack.pop()  # res
-        return res + (cur * sign)
 
-print(Solution().calculate("1-11"))  # -10
-print(Solution().calculate("2147483647"))  # 2147483647
-print(Solution().calculate("(1+(4+5+2)-3)+(6+8)"))  # 23
+        """
+        The time complexity is O(n), where n is the length of the input
+        string. Each character is processed once.
+
+        The space complexity is O(n), due to the stack used for storing
+        results and signs during parentheses processing.
+        """
+        return res + (cur * sign)
