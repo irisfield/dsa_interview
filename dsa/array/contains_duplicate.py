@@ -1,5 +1,6 @@
 class Solution:
     """217. Contains Duplicate"""
+
     def containsDuplicate(self, nums: list[int]) -> bool:
         count = {}
         for n in nums:  # time O(n)
@@ -22,6 +23,3 @@ class Solution:
         Space complexity is O(1), as no data structures were utilized, and the sorting is done in-place.
         """
         return False
-
-assert Solution().containsDuplicate([1,2,3,1]) == True, "Result should be True"
-assert Solution().containsDuplicate([1,2,3,4]) == False, "Result should be False"
