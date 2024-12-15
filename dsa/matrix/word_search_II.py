@@ -105,7 +105,7 @@ class Solution:
 
 
         The space complexity is O(m * n) due to the DFS recursion stack,
-        the path set, and the prefix map. In the worst case, each of them
-        can store every cell in the board or their position.
+        the path set, and the prefix map. In the worst case, each of
+        them can store every cell in the board or their position.
         """
         return res
