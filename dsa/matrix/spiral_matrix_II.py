@@ -43,8 +43,8 @@ class Solution:
                 count += 1
             left += 1
         """
-        The time complexity is O(n^2) because each element is
-        processed exactly once.
+        The time complexity is O(n^2) because each element is processed
+        exactly once.
 
         The space complexity is O(1) as no data structures are used.
         """
