@@ -58,7 +58,6 @@ class Solution:
                 r = mid - 1
             else:
                 return True
-        return False
         """
         The time complexity is O(log(m * n)). By virtually flattening
         the 2D matrix into a 1D array through clever conversion of the
@@ -66,3 +65,4 @@ class Solution:
 
         The space complexity is O(1).
         """
+        return False
