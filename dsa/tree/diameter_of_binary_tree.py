@@ -7,6 +7,7 @@
 
 class Solution:
     """543. Diameters of Binary Tree"""
+
     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
         diameter = 0
 
