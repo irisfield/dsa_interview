@@ -2,7 +2,6 @@ class Solution:
     """934. Shortest Bridge"""
 
     def shortestBridge(self, grid: list[list[int]]) -> int:
-
         """
         1. First, use DFS to identify the cells of the first island
            (i.e., the first group of connected 1's). Mark all the cells
