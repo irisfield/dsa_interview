@@ -7,6 +7,7 @@
 
 class Solution:
     """102. Binary Tree Level Order Traversal"""
+
     def levelOrder(self, root: Optional[TreeNode]) -> list[list[int]]:
         # Breadth-first Search
         if not root:
