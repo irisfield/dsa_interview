@@ -1,5 +1,6 @@
 class Solution:
     """76. Minimum Window Substring"""
+
     def minWindow(self, s: str, t: str) -> str:
         """
         Sliding Window Approach:
@@ -44,12 +45,14 @@ class Solution:
             r += 1
         """
         The time complexity is O(n + m), where n and m are the lengths
-        of the strings s and t. Both the left and right pointers traverse
-        the string once, and the operations within the loop are constant.
+        of the strings s and t. Both the left and right pointers
+        traverse the string once, and the operations within the loop are
+        constant.
 
         The space complexity is O(1). In the worst case, s and t can
         have up to k unique characters. But since both strings are
-        guaranteed to consist of uppercase and lowercase English letters,
-        k is a known constant: 26 + 26 = 52. Thus, k simplifies to O(1).
+        guaranteed to consist of uppercase and lowercase English
+        letters, k is a known constant: 26 + 26 = 52. Thus, k simplifies
+        to O(1).
         """
         return s[win[0]:win[1] + 1] if win else ""
