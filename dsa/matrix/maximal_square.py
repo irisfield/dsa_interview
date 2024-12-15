@@ -54,5 +54,3 @@ class Solution:
         stack and the memoization table.
         """
         return max(cache.values()) ** 2
-
-print(Solution().maximalSquare([["0","1"],["1","0"]]))
