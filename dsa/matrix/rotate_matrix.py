@@ -36,6 +36,6 @@ class Solution:
             left += 1
 
         """
-        The time complexity is O(n^2) as this is an N x N matrix.
-        The space complexity is O(1) as no data structures were utilized.
+        The time complexity is O(n^2) as this is an n x n matrix.
+        The space complexity is O(1) as no data structures were used.
         """
