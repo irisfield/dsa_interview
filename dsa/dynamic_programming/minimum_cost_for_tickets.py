@@ -1,5 +1,6 @@
 class Solution:
     """983. Minimum Cost for Tickets"""
+
     def mincostTickets(self, days: list[int], costs: list[int]) -> int:
         # Decision tree with memoization
         dp = {}
