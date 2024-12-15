@@ -21,7 +21,9 @@ class Solution:
             res = maxInt if sign > 0 else maxInt + 1
 
         """
-        The time complexity is O(n), as each character is processed exactly once.
+        The time complexity is O(n), as each character is processed
+        exactly once.
+
         The space complexity is O(1), no data structures were utilized.
         """
         return res * sign
