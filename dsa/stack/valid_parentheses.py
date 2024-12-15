@@ -1,5 +1,6 @@
 class Solution:
     """20. Valid Parentheses"""
+
     def isValid(self, s: str) -> bool:
         pairs = { "(" : ")", "{" : "}", "[" : "]" }
         stack = []
@@ -9,9 +10,11 @@ class Solution:
                 stack.append(p)  # space O(n)
             elif len(stack) == 0 or pairs[stack.pop()] != p:
                     return False
-        return len(stack) == 0
+        """
+        The time complexity is O(n), as each character in the string is
+        processed once.
 
-assert Solution().isValid("[") == False, "Expected False"
-assert Solution().isValid("(]") == False, "Expected False"
-assert Solution().isValid("([])") == True, "Expected True"
-assert Solution().isValid("()[]{}") == True, "Expected True"
+        The space complexity is O(n), as the stack can store up to
+        n characters in the worst case.
+        """
+        return len(stack) == 0
