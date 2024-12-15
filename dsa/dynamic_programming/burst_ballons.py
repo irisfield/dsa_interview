@@ -1,5 +1,6 @@
 class Solution:
     """312. Burst Ballons"""
+
     def maxCoins(self, nums: list[int]) -> int:
         dp = {}
         nums = [1] + nums + [1]
