@@ -40,5 +40,3 @@ class Solution:
         store the results no additional space is used.
         """
         return res
-
-print(Solution().findDiagonalOrder([[2,5],[8,4],[0,-1]]))
