@@ -1,7 +1,8 @@
 class Solution:
     """167. Two Sum II - Input Array Sorted"""
+
     def twoSum(self, nums: list[int], target: int) -> list[int]:
-        # NOTE: The solution must use constant extra space.
+        """The solution must use constant extra space."""
         l, r = 0, len(nums) - 1
         while l < r:  # time O(n)
             total = nums[l] + nums[r]
