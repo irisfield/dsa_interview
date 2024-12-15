@@ -26,8 +26,14 @@ class Solution:
             elif right:
                 return right
         """
-        The time complexity is O(n), where n is the number of nodes.
-        The space complexity is O(h), where h is the height of the tree.
-        In the case of a balanced tree, h is O(log n).
+        The time complexity is O(n). In the worst case, every node in
+        the tree is visited once, where n is the number of nodes in the
+        tree.
+
+        The space complexity is O(n). In the worst case, if the tree is
+        unbalanced, the recursion stack will store all the nodes in the
+        tree (i.e., the height of the tree). In the best case, for
+        a balanced tree, the space complexity is O(log n), where n is
+        the number of nodes.
         """
         return dfs(root)
