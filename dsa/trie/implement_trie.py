@@ -40,9 +40,3 @@ class Trie:
     The space complexity is O(n * m), where n is the number of words in
     the Trie and m is the average length of the words.
     """
-
-# Your Trie object will be instantiated and called as such:
-# obj = Trie()
-# obj.insert(word)
-# param_2 = obj.search(word)
-# param_3 = obj.startsWith(prefix)
