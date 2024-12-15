@@ -7,6 +7,7 @@
 
 class Solution:
     """104. Maximum Depth of Binary Tree"""
+
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         # Recursive Depth-first Search
         if not root:
