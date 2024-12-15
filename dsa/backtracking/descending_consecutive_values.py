@@ -1,5 +1,5 @@
 class Solution:
-    """LeetCode 1849: Splitting a String Into Descending Consecutive Values"""
+    """1849. Splitting a String Into Descending Consecutive Values"""
 
     def splitString(self, s: str) -> bool:
         def dfs(idx, prev):
