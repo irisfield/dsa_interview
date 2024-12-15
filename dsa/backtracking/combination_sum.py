@@ -1,5 +1,6 @@
 class Solution:
     """39. Combination Sum"""
+
     def combinationSum(self, candidates: list[int], target: int) -> list[list[int]]:
         res = []
 
