@@ -27,8 +27,12 @@ class Solution:
                 res == MIN // 10 and digit <= MIN % 10):
                 return 0
             res = (res * 10) + digit
+
         """
         The time complexity is O(log10 |x|), as the time depends on
         the total number of digits in x.
+
+        The space complexity is O(1) because only a few integer variables are used,
+        and the space required does not scale with the size of the input.
         """
         return res
