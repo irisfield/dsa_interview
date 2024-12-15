@@ -55,8 +55,3 @@ class TimeMap:
         this function.
         """
         return values[last][1] if last >= 0 else ""
-
-# Your TimeMap object will be instantiated and called as such:
-# obj = TimeMap()
-# obj.set(key,value,timestamp)
-# param_2 = obj.get(key,timestamp)
