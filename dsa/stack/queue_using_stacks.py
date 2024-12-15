@@ -2,6 +2,7 @@ class MyQueue:
     """
     232. Implement Queue using Stacks
 
+    Intuition:
     Stacks are first-in-last-out (FILO), while queues are
     first-in-first-out (FIFO). In this implementation, `self.queue`
     maintains the order of elements in the queue, and `self.stack` is
@@ -13,7 +14,7 @@ class MyQueue:
         self.stack = []
 
     def __queueify__(self):
-        if not self.queue:
+        if len(self.queue) == 0:
             while self.stack:
                 self.queue.append(self.stack.pop())
 
@@ -30,10 +31,3 @@ class MyQueue:
 
     def empty(self) -> bool:  # time O(1)
         return len(self.queue) == 0 and len(self.stack) == 0
-
-# Your MyQueue object will be instantiated and called as such:
-# obj = MyQueue()
-# obj.push(x)
-# param_2 = obj.pop()
-# param_3 = obj.peek()
-# param_4 = obj.empty()
