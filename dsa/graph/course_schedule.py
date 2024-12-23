@@ -12,21 +12,21 @@ class Solution:
         for course, prereq in prerequisites:  # O(p) time and space
             prereqs[course].append(prereq)
 
-        visited = set()
+        cycle = set()
 
         def dfs(course):
-            if course in visited:
+            if course in cycle:
                 return False
             if prereqs[course] == []:
                 return True
 
-            visited.add(course)
+            cycle.add(course)
 
             for prereq in prereqs[course]:
                 if not dfs(prereq):
                     return False
 
-            visited.remove(course)
+            cycle.remove(course)
             prereqs[course] = []
             return True
 
