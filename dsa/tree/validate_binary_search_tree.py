@@ -4,6 +4,7 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
 class Solution:
     """98. Validate Binary Search Tree"""
 
@@ -26,10 +27,14 @@ class Solution:
                     dfs(node.right, node.val, right))
 
         """
-        The time complexity is O(n), where n is the number of nodes in
-        the tree, as each node is visited exactly once.
+        The time complexity of the function is O(n), as each node is
+        visited once, and the swap operation takes constant time. The
+        time complexity does not depend on whether the tree is balanced
+        or not because each node is still visited exactly once.
 
-        The space complexity is O(h), where h is the height of the tree,
-        due to the recursion stack.
+        The space complexity is O(h), where h is the height of the tree.
+        This is because the recursion stack grows with the height of the
+        tree. In the worst case (unbalanced tree), the space complexity
+        is O(n). In the best case (balanced tree), it is O(log n).
         """
         return dfs(root, float("-inf"), float("inf"))
