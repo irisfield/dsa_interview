@@ -27,6 +27,7 @@ class Solution:
         dfs(root)
         """
         The time complexity is O(n) as each node is visited exactly once.
-        The space complexity is O(log n) because binary trees are balanced.
+        The space complexity is O(log n) if the binary tree is balanced.
+        The space complexity is O(n) if the binary tree is unbalanced.
         """
         return diameter
