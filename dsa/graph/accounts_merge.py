@@ -69,3 +69,49 @@ class Solution:
         grouping.
         """
         return res
+
+
+    def accountsMerge(self, accounts: list[list[str]]) -> list[list[str]]:
+        account_owner = {}  # email : index (in accounts)
+        visited = set()
+        res = []
+
+        # Map each email to a list of accounts
+        for index, account in enumerate(accounts):
+            for email in account[1:]:
+                if email not in account_owner:
+                    account_owner[email] = []
+                account_owner[email].append(index)
+
+        # DFS for traversing accounts
+        def dfs(i, emails):
+            if i in visited:
+                return
+
+            visited.add(i)
+
+            for j in range(1, len(accounts[i])):
+                email = accounts[i][j]
+                emails.add(email)
+                for index in account_owner[email]:
+                    dfs(index, emails)
+
+        for index, account in enumerate(accounts):
+            if index in visited:
+                continue
+            name, emails = account[0], set()
+            dfs(index, emails)
+            res.append([name] + sorted(emails))
+
+        """
+        The time complexity is O(A * log A), where A is the total number
+        of emails across all accounts. This arises because each email is
+        processed once during the DFS traversal, and sorting the emails
+        for each account group takes O(E log E), where E is the number
+        of emails in that group.
+
+        The space complexity is O(A), as the data structures (e.g.,
+        account_owner map, visited set, and recursion stack) require
+        storage proportional to the total number of emails.
+        """
+        return res
